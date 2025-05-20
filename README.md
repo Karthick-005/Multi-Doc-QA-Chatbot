@@ -83,6 +83,10 @@ http://127.0.0.1:5000
 ├── static/
 └── templates/
 ```
+### Screenshots
+![Image](https://github.com/user-attachments/assets/b88a5543-ff32-4653-9323-b9610c0de634)
+![Image](https://github.com/user-attachments/assets/20e1ee54-009e-4165-b0c8-1abf592b1ef4)
+![Image](https://github.com/user-attachments/assets/621ca795-8512-4731-be7b-db441ed439d1)
 
 ### 🧠 Tech Stack
 Python
