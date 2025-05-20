@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>DocuMind - AI Document Insights</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='chat.css') }}">
+    
+</head>
+<body>    
+    <div class="container">
+        <div class="chat-container">
+            <div class="upload-container">
+
+            </div>
+            <div id="chatHistory" class="chat-history">
+                
+                <div class="welcome-message" id="welcomeMessage">
+                    <p>Welcome to <span>DocuMind !</span></p>
+                    Ask about your document...
+                </div>
+            </div>
+        </div>
+        <div class="document-selection hidden" id="docSelection">
+            <div class="custom-dropdown">
+                <button id="dropdownBtn" class="file-select">Select a document</button>
+                <ul id="dropdownList" class="dropdown-list hidden"></ul>
+            </div>
+        </div>
+        <div class="input-box">
+            <div class="input-section">
+                <div class="input-group">
+                    <button id="newChatButton" class="new-ask-btn" style="margin-bottom: 10px;">+</button>
+                    <input type="text" id="questionInput" class="question-input" placeholder="Ask about your document...">
+                    <button type="button" id="voice-input">
+                        <i class="fas fa-microphone"></i>
+                    </button>
+                    <button id="askButton" class="ask-btn"><img src="/static/send-icon.png"></button>
+                    <button class="upload-btn" onclick="goToUpload()"><img src="/static/upload.png"></button>
+                    <button class="toggle-btn" onclick="toggleSelection()"><img src="/static/document.png"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="chatHistorySidebar" class="chat-history-sidebar">
+        <h3>Chat History</h3>
+        <ul id="sidebarChatHistory" class="sidebarchat"></ul>
+    </div>
+
+    <button class="sidebar-toggle-btn" onclick="toggleSidebar()">☰</button>
+
+    <button id="themeToggle" class="theme-toggle">🌓</button>
+    <div id="contextContainer" class="context-container">
+        <div id="contextContent"></div>
+    </div>
+    <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+
+    <div id="blur-overlay" class="blur-overlay"></div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-body">
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='chat.js') }}"></script>
+</body>
+</html>
