@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocuMind - Intelligent Document Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='upload.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="turn-back">
+    <h1>DocuMind</h1>
+   <a href="/chat">Back to Chat ⮌</a>
+</div>
+    <button id="themeToggle" class="theme-toggle">🌓</button>
+    <main class="main-container">
+        <section class="upload-section">
+
+            <div class="upload-card">
+                <div class="drag-drop-zone" id="dropZone">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h3>Drag & Drop Files</h3>
+                    <p>or click to browse</p>
+                    <input type="file" id="fileInput" class="hidden-input" accept=".pdf,.docx,.csv,.txt,.mp4,.mp3,.wav,.jpg,.jpeg,.png" multiple>
+                </div>
+                            <!-- New URL Input Section -->
+
+                <div class="file-status" id="fileStatus"></div>
+            </div>
+            <div class="url-input-section">
+                <h3>Input URLs (comma separated)</h3>
+                <input type="text" id="urlInput" placeholder="Enter URLs here...">
+                <button id="processUrlsBtn" class="process-btn">Process URLs</button>
+        </div>
+
+            <section class="file-list-section">
+                <div class="file-tabs" id="fileTabs"></div>
+                <div class="file-list" id="fileList"></div>
+            </section>
+
+
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='upload.js') }}"></script>
+</body>
+</html>
